@@ -1,0 +1,18 @@
+{
+    "name": "theodorejb/phpunit-exclude-group-bug",
+    "description": "Reproduce PHPUnit 10+ bug with --exclude-group",
+    "type": "project",
+    "license": "MIT",
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PhpunitExcludeGroupBug\\Test\\": "test/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit test",
+        "test-skip-intl": "phpunit test --exclude-group intl"
+    }
+}
