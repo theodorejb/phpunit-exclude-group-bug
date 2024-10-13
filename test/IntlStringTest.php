@@ -2,11 +2,11 @@
 
 namespace PhpunitExcludeGroupBug\Test;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @group intl
- */
+#[Group('intl')]
 class IntlStringTest extends TestCase
 {
     public static function provider(): array
@@ -21,9 +21,7 @@ class IntlStringTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provider
-     */
+    #[DataProvider('provider')]
     public function test(string $value, int $expectedLen): void
     {
         $this->assertSame($expectedLen, grapheme_strlen($value));
